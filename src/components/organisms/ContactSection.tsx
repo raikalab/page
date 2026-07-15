@@ -1,41 +1,43 @@
-import { Mail, Send } from "lucide-react";
-import { supportEmail } from "../../data/apps";
+import { Send } from "lucide-react";
+import type { Language } from "../../data/apps";
+import { contactTarget, copy } from "../../data/apps";
 
-export function ContactSection() {
+type ContactSectionProps = {
+  language: Language;
+};
+
+export function ContactSection({ language }: ContactSectionProps) {
+  const t = copy[language];
+
   return (
-    <section className="section contact" id="contacto">
+    <section className="section contact reveal" id="contacto">
       <div className="contact__copy">
-        <span>Contacto</span>
-        <h2>Soporte, dudas o colaboraciones</h2>
-        <p>
-          Para cualquier duda relacionada con Raika Lab, soporte de apps o una nueva idea,
-          escribenos a traves del formulario.
-        </p>
-        <a href={`mailto:${supportEmail}`}>
-          <Mail size={18} aria-hidden="true" />
-          {supportEmail}
-        </a>
+        <span>{t.contactEyebrow}</span>
+        <h2>{t.contactTitle}</h2>
+        <p>{t.contactText}</p>
       </div>
-      <form className="contact__form" action={`mailto:${supportEmail}`} method="post">
+      <form className="contact__form" action={contactTarget} method="post">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde Raika Lab" />
         <label>
-          Nombre
-          <input name="name" type="text" autoComplete="name" placeholder="Tu nombre" required />
+          {t.name}
+          <input name="name" type="text" autoComplete="name" required />
         </label>
         <label>
-          Email
-          <input name="email" type="email" autoComplete="email" placeholder="tu@email.com" required />
+          {t.email}
+          <input name="email" type="email" autoComplete="email" required />
         </label>
         <label>
-          Asunto
-          <input name="subject" type="text" placeholder="Soporte, colaboracion o duda" required />
+          {t.subject}
+          <input name="subject" type="text" required />
         </label>
         <label>
-          Mensaje
-          <textarea name="message" placeholder="Cuentanos como podemos ayudarte" rows={5} required />
+          {t.message}
+          <textarea name="message" rows={5} required />
         </label>
         <button type="submit">
           <Send size={18} aria-hidden="true" />
-          Enviar mensaje
+          {t.send}
         </button>
       </form>
     </section>

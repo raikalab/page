@@ -1,17 +1,44 @@
+import { useEffect, useState } from "react";
+import type { Language } from "../../data/apps";
 import { ContactSection } from "../organisms/ContactSection";
 import { Footer } from "../organisms/Footer";
 import { GamesSection } from "../organisms/GamesSection";
 import { Header } from "../organisms/Header";
 import { Hero } from "../organisms/Hero";
+import { PhilosophySection } from "../organisms/PhilosophySection";
 
 export function SitePage() {
+  const [language, setLanguage] = useState<Language>("es");
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll(".reveal"));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, [language]);
+
   return (
     <>
-      <Header />
+      <Header language={language} onLanguageChange={() => setLanguage(language === "es" ? "en" : "es")} />
       <main>
-        <Hero />
-        <GamesSection />
-        <ContactSection />
+        <Hero language={language} />
+        <GamesSection language={language} />
+        <PhilosophySection language={language} />
+        <ContactSection language={language} />
       </main>
       <Footer />
     </>

@@ -1,47 +1,39 @@
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Layers } from "lucide-react";
+import type { Language } from "../../data/apps";
+import { copy } from "../../data/apps";
 import { Button } from "../atoms/Button";
 
-export function Hero() {
+type HeroProps = {
+  language: Language;
+};
+
+export function Hero({ language }: HeroProps) {
+  const t = copy[language];
+
   return (
-    <section className="hero" id="inicio">
-      <div className="hero__content">
+    <section className="hero reveal" id="inicio">
+      <div className="hero__content reveal">
         <span className="hero__eyebrow">
-          <Sparkles size={16} aria-hidden="true" />
-          Desarrollo de software, juegos y apps moviles
+          <Layers size={16} aria-hidden="true" />
+          {t.heroKicker}
         </span>
-        <h1>Raika Lab</h1>
-        <p>
-          Creamos experiencias digitales con personalidad: juegos sociales, herramientas utiles y
-          productos escalables para Android, iOS y web.
-        </p>
+        <h1>{t.heroTitle}</h1>
+        <p>{t.heroText}</p>
         <div className="hero__actions">
-          <Button href="#games">
-            Ver apps
+          <Button href="#apps">
+            {t.heroPrimary}
             <ArrowRight size={18} aria-hidden="true" />
           </Button>
-          <Button href="#contacto" variant="ghost">
-            Contacto y soporte
+          <Button href="#filosofia" variant="ghost">
+            {t.heroSecondary}
           </Button>
         </div>
       </div>
-      <div className="hero__showcase" aria-hidden="true">
-        <div className="phone phone--front">
-          <div className="phone__status" />
-          <div className="phone__app-mark">R</div>
-          <div className="phone__lines">
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
-        <div className="phone phone--back">
-          <div className="phone__status" />
-          <div className="phone__grid">
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
+      <div className="hero__showcase reveal" aria-hidden="true">
+        <img src="/assets/verdad-o-reto-spicy.png" alt="" />
+        <div className="hero__metric">
+          <strong>01</strong>
+          <span>Publicado</span>
         </div>
       </div>
     </section>
