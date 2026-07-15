@@ -1,7 +1,6 @@
-import { ArrowRight, Layers } from "lucide-react";
+import { Layers } from "lucide-react";
 import type { Language } from "../../data/apps";
 import { copy } from "../../data/apps";
-import { Button } from "../atoms/Button";
 
 type HeroProps = {
   language: Language;
@@ -26,18 +25,9 @@ export function Hero({ language }: HeroProps) {
           ))}
         </h1>
         <p>{t.heroText}</p>
-        <div className="hero__actions">
-          <Button href="#apps">
-            {t.heroPrimary}
-            <ArrowRight size={18} aria-hidden="true" />
-          </Button>
-          <Button href="#filosofia" variant="ghost">
-            {t.heroSecondary}
-          </Button>
-        </div>
       </div>
       <div className="hero__showcase reveal" aria-hidden="true">
-        <img src="/assets/verdad-o-reto-spicy.png" alt="" />
+        <img src="/assets/raika-lab-hero.png" alt="" />
       </div>
     </section>
   );

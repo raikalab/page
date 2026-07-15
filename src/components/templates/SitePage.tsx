@@ -9,10 +9,15 @@ import { PhilosophySection } from "../organisms/PhilosophySection";
 
 export function SitePage() {
   const [language, setLanguage] = useState<Language>("es");
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll(".reveal"));
@@ -33,7 +38,12 @@ export function SitePage() {
 
   return (
     <>
-      <Header language={language} onLanguageChange={() => setLanguage(language === "es" ? "en" : "es")} />
+      <Header
+        language={language}
+        theme={theme}
+        onLanguageChange={() => setLanguage(language === "es" ? "en" : "es")}
+        onThemeChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+      />
       <main>
         <Hero language={language} />
         <GamesSection language={language} />
