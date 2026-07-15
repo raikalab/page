@@ -7,14 +7,28 @@ type PhilosophySectionProps = {
 
 export function PhilosophySection({ language }: PhilosophySectionProps) {
   const t = copy[language];
+  const firstWords = t.philosophyBody.split(" ");
+  const secondWords = t.philosophyBodyTwo.split(" ");
 
   return (
     <section className="philosophy reveal" id="filosofia">
       <div className="philosophy__inner">
         <span>{t.philosophyEyebrow}</span>
         <h2>{t.philosophyTitle}</h2>
-        <p className="philosophy__text">{t.philosophyBody}</p>
-        <p className="philosophy__text philosophy__text--second">{t.philosophyBodyTwo}</p>
+        <p className="philosophy__text" aria-label={t.philosophyBody}>
+          {firstWords.map((word, index) => (
+            <span key={`${word}-${index}`} style={{ "--i": index } as React.CSSProperties}>
+              {word}
+            </span>
+          ))}
+        </p>
+        <p className="philosophy__text philosophy__text--second" aria-label={t.philosophyBodyTwo}>
+          {secondWords.map((word, index) => (
+            <span key={`${word}-${index}`} style={{ "--i": index } as React.CSSProperties}>
+              {word}
+            </span>
+          ))}
+        </p>
       </div>
     </section>
   );

@@ -26,7 +26,7 @@ export const copy = {
     themeDark: "Oscuro",
     themeLight: "Claro",
     heroKicker: "Raika Lab",
-    heroTitle: "Laboratorio de apps.",
+    heroTitle: "Software simple. Ideas útiles.",
     heroText:
       "Diseñamos apps, juegos y herramientas digitales con intención: simples, útiles y cuidadas desde el primer toque.",
     heroPrimary: "Ver proyectos",
@@ -63,12 +63,12 @@ export const copy = {
     themeDark: "Dark",
     themeLight: "Light",
     heroKicker: "Raika Lab",
-    heroTitle: "App laboratory.",
+    heroTitle: "Simple software. Useful ideas.",
     heroText:
       "We design apps, games, and digital tools that feel direct, useful, and carefully made from the first tap.",
     heroPrimary: "View projects",
     heroSecondary: "Our philosophy",
-    appsEyebrow: "Apps",
+    appsEyebrow: "",
     appsTitle: "Our developments",
     appsIntro: "",
     openProject: "View details",

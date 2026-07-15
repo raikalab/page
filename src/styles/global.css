@@ -234,7 +234,7 @@ textarea {
   background: linear-gradient(180deg, var(--ink) 0%, var(--muted) 100%);
   background-clip: text;
   color: transparent;
-  font-size: 4.8rem;
+  font-size: 3.85rem;
   font-weight: 950;
   letter-spacing: 0;
   line-height: 0.92;
@@ -247,6 +247,29 @@ textarea {
   transform: translateY(34px) rotate(1.5deg);
   animation: title-in 780ms cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
   animation-delay: calc(var(--i) * 120ms);
+}
+
+.hero-copy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28em;
+}
+
+.hero-copy span {
+  display: inline-block;
+  opacity: 0.18;
+  transform: translateY(18px);
+  animation: word-reveal both linear;
+  animation-timeline: view();
+  animation-range: entry 12% cover 42%;
+  animation-delay: calc(var(--i) * 14ms);
+}
+
+@keyframes word-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes title-in {
@@ -277,7 +300,7 @@ textarea {
   max-width: 610px;
   margin: 0;
   color: var(--muted);
-  font-size: 1.26rem;
+  font-size: 1.08rem;
   font-weight: 300;
   line-height: 1.52;
 }
@@ -293,6 +316,10 @@ textarea {
   position: relative;
   isolation: isolate;
   min-height: 560px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  box-shadow: var(--shadow);
 }
 
 .hero__showcase::before {
@@ -307,14 +334,80 @@ textarea {
   filter: blur(8px);
 }
 
-.hero__showcase img {
-  width: min(100%, 410px);
+.hero__showcase video {
+  width: 100%;
   height: 560px;
   object-fit: cover;
-  border: 1px solid var(--line);
-  border-radius: 34px;
-  box-shadow: var(--shadow);
-  transform: rotate(2.5deg);
+  display: block;
+}
+
+.hero__motion {
+  transform: rotate(2deg);
+}
+
+.hero__scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 42%,
+    rgba(34, 211, 238, 0.22) 48%,
+    transparent 56%,
+    transparent 100%
+  );
+  mix-blend-mode: screen;
+  transform: translateX(-100%);
+  animation: hero-scan 4.8s ease-in-out infinite;
+}
+
+.hero__pulse {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(34, 211, 238, 0.38);
+  border-radius: 999px;
+  opacity: 0;
+  animation: hero-pulse 4s ease-out infinite;
+}
+
+.hero__pulse--one {
+  left: 18%;
+  top: 24%;
+}
+
+.hero__pulse--two {
+  right: 12%;
+  bottom: 18%;
+  animation-delay: 1.8s;
+}
+
+@keyframes hero-scan {
+  0%,
+  18% {
+    transform: translateX(-110%);
+  }
+
+  62%,
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes hero-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.45);
+  }
+
+  18% {
+    opacity: 0.48;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.45);
+  }
 }
 
 .section {
@@ -362,8 +455,8 @@ textarea {
 
 .games__grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(190px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .product-card.reveal:nth-child(odd) {
@@ -381,8 +474,8 @@ textarea {
 .product-card {
   position: relative;
   display: grid;
-  grid-template-rows: 1fr auto;
-  min-height: 520px;
+  grid-template-rows: 240px 1fr;
+  min-height: 620px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 28px;
@@ -404,8 +497,9 @@ textarea {
 }
 
 .product-card__visual {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  inset: auto;
+  overflow: hidden;
 }
 
 .product-card__visual img {
@@ -422,19 +516,20 @@ textarea {
 }
 
 .product-card::after {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 28%, rgba(0, 0, 0, 0.2) 52%, rgba(0, 0, 0, 0.86) 100%);
-  content: "";
+  display: none;
 }
 
 .product-card__content {
   position: relative;
   z-index: 1;
-  align-self: end;
+  align-self: stretch;
   display: grid;
   gap: 12px;
-  padding: 18px;
+  align-content: start;
+  padding: 20px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 42%),
+    rgba(10, 10, 10, 0.96);
 }
 
 .product-card__meta {
@@ -455,14 +550,14 @@ textarea {
 
 .product-card p {
   margin: 0;
-  color: #d0c7bd;
-  font-size: 0.92rem;
+  color: #f2eee6;
+  font-size: 0.95rem;
   font-weight: 300;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .product-card__detail {
-  color: rgba(246, 241, 232, 0.7) !important;
+  color: rgba(246, 241, 232, 0.74) !important;
 }
 
 .project-detail {
@@ -506,14 +601,16 @@ textarea {
 }
 
 .platforms {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
+  margin-top: auto;
 }
 
 .store {
   justify-content: center;
   gap: 8px;
-  width: 126px;
+  width: 100%;
   min-height: 42px;
   border: 1px solid rgba(246, 241, 232, 0.22);
   border-radius: 999px;
@@ -565,18 +662,22 @@ textarea {
 }
 
 .philosophy__text {
-  opacity: 0;
-  transform: translateY(34px);
-  animation: philosophy-rise both ease-out;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28em;
+}
+
+.philosophy__text span {
+  display: inline-block;
+  opacity: 0.12;
+  transform: translateY(18px);
+  animation: philosophy-word both linear;
   animation-timeline: view();
-  animation-range: entry 18% cover 44%;
+  animation-range: entry 18% cover 58%;
+  animation-delay: calc(var(--i) * 12ms);
 }
 
-.philosophy__text--second {
-  animation-range: entry 22% cover 52%;
-}
-
-@keyframes philosophy-rise {
+@keyframes philosophy-word {
   to {
     opacity: 1;
     transform: translateY(0);
@@ -677,6 +778,11 @@ textarea {
   text-transform: uppercase;
 }
 
+.footer strong b {
+  color: #ef233c;
+  font-size: 1.05rem;
+}
+
 @media (max-width: 1100px) {
   .nav__links {
     gap: 14px;
@@ -684,7 +790,7 @@ textarea {
   }
 
   .hero-title {
-    font-size: 4rem;
+    font-size: 3.25rem;
   }
 
   .section-heading h2,
@@ -747,7 +853,7 @@ textarea {
   }
 
   .hero-title {
-    font-size: 3.45rem;
+    font-size: 2.9rem;
   }
 
   .hero p {
@@ -764,7 +870,7 @@ textarea {
     min-height: auto;
   }
 
-  .hero__showcase img {
+  .hero__showcase video {
     width: 100%;
     height: 460px;
   }
@@ -776,7 +882,7 @@ textarea {
 
 @media (max-width: 600px) {
   .hero-title {
-    font-size: 2.65rem;
+    font-size: 2.25rem;
   }
 
   .section-heading h2,
@@ -794,7 +900,8 @@ textarea {
   }
 
   .product-card {
-    min-height: 460px;
+    grid-template-rows: 220px 1fr;
+    min-height: 560px;
   }
 
   .product-card.reveal:nth-child(odd),
