@@ -5,6 +5,7 @@ import { Footer } from "../organisms/Footer";
 import { GamesSection } from "../organisms/GamesSection";
 import { Header } from "../organisms/Header";
 import { Hero } from "../organisms/Hero";
+import { LabSection } from "../organisms/LabSection";
 import { PhilosophySection } from "../organisms/PhilosophySection";
 
 export function SitePage() {
@@ -47,6 +48,7 @@ export function SitePage() {
       <main>
         <Hero language={language} />
         <GamesSection language={language} />
+        <LabSection language={language} />
         <PhilosophySection language={language} />
         <ContactSection language={language} />
       </main>
