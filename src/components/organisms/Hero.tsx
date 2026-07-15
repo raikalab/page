@@ -9,6 +9,7 @@ type HeroProps = {
 
 export function Hero({ language }: HeroProps) {
   const t = copy[language];
+  const titleWords = t.heroTitle.split(" ");
 
   return (
     <section className="hero reveal" id="inicio">
@@ -17,7 +18,13 @@ export function Hero({ language }: HeroProps) {
           <Layers size={16} aria-hidden="true" />
           {t.heroKicker}
         </span>
-        <h1>{t.heroTitle}</h1>
+        <h1 className="hero-title" aria-label={t.heroTitle}>
+          {titleWords.map((word, index) => (
+            <span key={`${word}-${index}`} style={{ "--i": index } as React.CSSProperties}>
+              {word}
+            </span>
+          ))}
+        </h1>
         <p>{t.heroText}</p>
         <div className="hero__actions">
           <Button href="#apps">
@@ -31,10 +38,6 @@ export function Hero({ language }: HeroProps) {
       </div>
       <div className="hero__showcase reveal" aria-hidden="true">
         <img src="/assets/verdad-o-reto-spicy.png" alt="" />
-        <div className="hero__metric">
-          <strong>01</strong>
-          <span>Publicado</span>
-        </div>
       </div>
     </section>
   );

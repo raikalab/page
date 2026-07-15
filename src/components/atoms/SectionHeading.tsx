@@ -9,7 +9,7 @@ export function SectionHeading({ eyebrow, title, description }: SectionHeadingPr
     <div className="section-heading">
       <span>{eyebrow}</span>
       <h2>{title}</h2>
-      <p>{description}</p>
+      {description ? <p>{description}</p> : null}
     </div>
   );
 }

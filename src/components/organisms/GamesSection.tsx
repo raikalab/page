@@ -4,7 +4,6 @@ import { apps } from "../../data/apps";
 import { copy } from "../../data/apps";
 import { SectionHeading } from "../atoms/SectionHeading";
 import { ProductCard } from "../molecules/ProductCard";
-import { PlatformButtons } from "../molecules/PlatformButtons";
 
 type GamesSectionProps = {
   language: Language;
@@ -22,11 +21,10 @@ export function GamesSection({ language }: GamesSectionProps) {
         description={t.appsIntro}
       />
       <div className="games__grid">
-        {apps.map((app, index) => (
+        {apps.map((app) => (
           <ProductCard
             key={app.id}
             app={app}
-            index={index}
             language={language}
             active={selected.id === app.id}
             onSelect={setSelected}
@@ -49,7 +47,6 @@ export function GamesSection({ language }: GamesSectionProps) {
             <dd>{selected.androidHref ? t.androidLabel : t.unavailable}</dd>
           </div>
         </dl>
-        <PlatformButtons app={selected} language={language} />
       </aside>
     </section>
   );

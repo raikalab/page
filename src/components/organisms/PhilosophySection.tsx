@@ -13,8 +13,8 @@ export function PhilosophySection({ language }: PhilosophySectionProps) {
       <div className="philosophy__inner">
         <span>{t.philosophyEyebrow}</span>
         <h2>{t.philosophyTitle}</h2>
-        <p>{t.philosophyBody}</p>
-        <p>{t.philosophyBodyTwo}</p>
+        <p className="philosophy__text">{t.philosophyBody}</p>
+        <p className="philosophy__text philosophy__text--second">{t.philosophyBodyTwo}</p>
       </div>
     </section>
   );

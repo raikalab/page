@@ -12,7 +12,6 @@ export function ContactSection({ language }: ContactSectionProps) {
   return (
     <section className="section contact reveal" id="contacto">
       <div className="contact__copy">
-        <span>{t.contactEyebrow}</span>
         <h2>{t.contactTitle}</h2>
         <p>{t.contactText}</p>
       </div>
