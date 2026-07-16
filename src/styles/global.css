@@ -732,6 +732,12 @@ textarea {
     background 180ms ease;
 }
 
+.store img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
 .store:hover {
   transform: translateY(-1px);
 }

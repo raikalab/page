@@ -1,4 +1,3 @@
-import { Apple, Play } from "lucide-react";
 import type { Language, ProductApp } from "../../data/apps";
 import { copy } from "../../data/apps";
 
@@ -24,11 +23,11 @@ export function PlatformButtons({ app, language }: PlatformButtonsProps) {
         rel={app.androidHref ? "noreferrer" : undefined}
         aria-label={`${app.title}: ${t.androidLabel}`}
       >
-        <Play size={18} aria-hidden="true" />
+        <img src="/assets/android-store.png" alt="" aria-hidden="true" />
         <span>{t.androidLabel}</span>
       </a>
       <a className="store store--quiet" href="#contacto" aria-label={`${app.title}: ${t.iosLabel}`}>
-        <Apple size={19} aria-hidden="true" />
+        <img src="/assets/ios-store.png" alt="" aria-hidden="true" />
         <span>{t.iosLabel}</span>
       </a>
     </div>
