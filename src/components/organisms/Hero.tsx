@@ -1,4 +1,3 @@
-import { Layers } from "lucide-react";
 import { useEffect, useRef } from "react";
 import type { Language } from "../../data/apps";
 import { copy } from "../../data/apps";
@@ -23,7 +22,6 @@ export function Hero({ language }: HeroProps) {
     <section className="hero reveal" id="inicio">
       <div className="hero__content reveal">
         <span className="hero__eyebrow">
-          <Layers size={16} aria-hidden="true" />
           {t.heroKicker}
         </span>
         <h1 className="hero-title" aria-label={t.heroTitle}>

@@ -1,7 +1,6 @@
 import { Menu } from "lucide-react";
 import type { Language } from "../../data/apps";
 import { copy } from "../../data/apps";
-import { Button } from "../atoms/Button";
 import { Logo } from "../atoms/Logo";
 
 type HeaderProps = {
@@ -25,13 +24,20 @@ export function Header({ language, onLanguageChange, theme, onThemeChange }: Hea
         <div className="nav__links">
           <a href="#apps">{t.navApps}</a>
           <a href="#filosofia">{t.navPhilosophy}</a>
+          <a href="#laboratorio">{t.navTeam}</a>
           <a href="#contacto">{t.navContact}</a>
-          <Button onClick={onLanguageChange} variant="secondary">
-            {t.language}
-          </Button>
-          <Button onClick={onThemeChange} variant="secondary">
-            {theme === "dark" ? t.themeLight : t.themeDark}
-          </Button>
+          <button className="icon-button" type="button" onClick={onLanguageChange} aria-label={t.language} title={t.language}>
+            <img src="/assets/language.png" alt="" aria-hidden="true" />
+          </button>
+          <button
+            className="icon-button"
+            type="button"
+            onClick={onThemeChange}
+            aria-label={theme === "dark" ? t.themeLight : t.themeDark}
+            title={theme === "dark" ? t.themeLight : t.themeDark}
+          >
+            <img src="/assets/dark-mode.png" alt="" aria-hidden="true" />
+          </button>
         </div>
       </nav>
     </header>

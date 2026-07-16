@@ -30,7 +30,6 @@ export function LabSection({ language }: LabSectionProps) {
       <div className="lab-section__flow" aria-label={t.labTitle}>
         {steps.map((step, index) => (
           <article key={step.title} className="lab-step reveal" style={{ "--i": index } as React.CSSProperties}>
-            <strong>{String(index + 1).padStart(2, "0")}</strong>
             <h3>{step.title}</h3>
             <p>{step.text}</p>
           </article>

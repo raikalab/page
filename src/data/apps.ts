@@ -21,6 +21,7 @@ export const copy = {
   es: {
     navApps: "Apps",
     navPhilosophy: "Filosofía",
+    navTeam: "Equipo",
     navContact: "Contacto",
     language: "English",
     themeDark: "Oscuro",
@@ -28,14 +29,14 @@ export const copy = {
     heroKicker: "Raika Lab",
     heroTitle: "Software simple. Ideas útiles.",
     heroText:
-      "Diseñamos apps, juegos y herramientas digitales con intención: simples, útiles y cuidadas desde el primer toque.",
+      "Diseñamos herramientas digitales, juegos y aplicaciones que resuelven problemas reales, sin complicaciones ni funciones de sobra.",
     heroPrimary: "Ver proyectos",
     heroSecondary: "Nuestra filosofía",
     appsEyebrow: "",
     appsTitle: "Nuestros desarrollos",
     appsIntro: "",
     labEyebrow: "Laboratorio",
-    labTitle: "Fábrica de software con propósito social",
+    labTitle: "Desarrollamos software con propósito social.",
     labText:
       "Somos un equipo de colaboradores, con sede en México, que construimos software con propósito social y lo distribuimos a comunidades de México y el mundo.",
     labStepOne: "Ideamos",
@@ -68,6 +69,7 @@ export const copy = {
   en: {
     navApps: "Apps",
     navPhilosophy: "Philosophy",
+    navTeam: "Team",
     navContact: "Contact",
     language: "Español",
     themeDark: "Dark",
@@ -82,7 +84,7 @@ export const copy = {
     appsTitle: "Our developments",
     appsIntro: "",
     labEyebrow: "Laboratory",
-    labTitle: "Software factory with social purpose",
+    labTitle: "We develop software with social purpose.",
     labText:
       "We are a team of collaborators based in Mexico, building software with social purpose and distributing it to communities in Mexico and around the world.",
     labStepOne: "Ideate",
