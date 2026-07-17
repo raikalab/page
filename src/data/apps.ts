@@ -48,7 +48,7 @@ export const copy = {
     openProject: "Ver detalles",
     selectedProject: "Detalle",
     androidLabel: "Google Play",
-    iosLabel: "iOS",
+    iosLabel: "App Store",
     unavailable: "En desarrollo",
     philosophyEyebrow: "Nuestra filosofía",
     philosophyTitle: "Sin humo. Sin botones inútiles.",
@@ -96,7 +96,7 @@ export const copy = {
     openProject: "View details",
     selectedProject: "Details",
     androidLabel: "Google Play",
-    iosLabel: "iOS",
+    iosLabel: "App Store",
     unavailable: "In development",
     philosophyEyebrow: "Our philosophy",
     philosophyTitle: "No smoke. No useless buttons.",
@@ -124,8 +124,8 @@ export const apps: ProductApp[] = [
     status: { es: "Publicado en Android", en: "Published on Android" },
     audience: { es: "Parejas y amigos adultos", en: "Adult couples and friends" },
     description: {
-      es: "Un juego social +18 para parejas o amigos que convierte una reunión en una dinámica más atrevida, directa y fácil de iniciar.",
-      en: "An adult social game for couples or friends that turns a gathering into a bolder, direct, easy-to-start dynamic.",
+      es: "Un juego social +18 para parejas o amigxs que convierte una reunión en una dinámica más atrevida y directa.",
+      en: "An adult social game for couples or friends that turns a gathering into a bolder, more direct dynamic.",
     },
     detail: {
       es: "Ya publicada en Google Play. Pensada para entrar rápido, elegir la intensidad y empezar sin menús innecesarios.",
@@ -159,12 +159,12 @@ export const apps: ProductApp[] = [
     status: { es: "En desarrollo", en: "In development" },
     audience: { es: "Trabajadores en México", en: "Workers in Mexico" },
     description: {
-      es: "Un dashboard atractivo tipo wallet bancaria moderna para calcular tu finiquito o liquidación y entender datos laborales clave.",
+      es: "Un dashboard tipo wallet moderno para calcular tu finiquito o liquidación y entender datos laborales clave.",
       en: "A modern banking-wallet-style dashboard that helps calculate severance or settlement and understand key labor data.",
     },
     detail: {
-      es: "Una herramienta para tomar mejores decisiones: calcula, ordena conceptos y presenta la información laboral de forma clara y accionable.",
-      en: "A tool for better decisions: it calculates, organizes concepts, and presents labor information clearly and actionably.",
+      es: "Una herramienta que calcula, organiza y presenta conceptos laborales de forma sencilla, facilitando el análisis de la información y la toma de mejores decisiones.",
+      en: "A tool that calculates, organizes, and presents employment-related data in a straightforward way, making it easier to analyze information and make better-informed decisions.",
     },
     image: "/assets/calcula-tu-liquidacion.png",
     accent: "#3ddc84",
@@ -172,12 +172,12 @@ export const apps: ProductApp[] = [
   {
     id: "aprende-futbol",
     title: "Aprende Fútbol",
-    category: { es: "Educación deportiva", en: "Sports education" },
+    category: { es: "Educación deportiva", en: "Soccer education" },
     status: { es: "Planeado", en: "Planned" },
     audience: { es: "Fans y nuevos aficionados", en: "Fans and new supporters" },
     description: {
-      es: "El Duolingo del fútbol: lecciones breves para aprender historia, reglas, estrategia y cultura del juego paso a paso.",
-      en: "The Duolingo of football: short lessons to learn history, rules, strategy, and football culture step by step.",
+      es: "Un Duolingo del fútbol. Con lecciones breves para aprender historia, reglas, estrategia y cultura del deporte más bonito del mundo",
+      en: "Duolingo for football, featuring bite-sized lessons on the history, rules, strategy, and culture of the beautiful game.",
     },
     detail: {
       es: "La idea es llevar el ritmo de aprendizaje tipo Duolingo al fútbol: pequeñas sesiones, avance visible y contenido digerible.",
@@ -193,12 +193,12 @@ export const apps: ProductApp[] = [
     status: { es: "Planeado", en: "Planned" },
     audience: { es: "Sector eléctrico y renovables", en: "Power and renewables sector" },
     description: {
-      es: "App y web para seguir noticias del sector energético en México, con foco en electricidad y renovables.",
-      en: "An app and website for tracking Mexico's energy sector news, focused on electricity and renewables.",
+      es: "Portal para seguir noticias del sector energético en México y el mundo.",
+      en: "A portal for following energy sector news in Mexico and around the world.",
     },
     detail: {
-      es: "El producto apunta a ordenar información de valor para profesionales, emprendedores y lectores interesados en energía.",
-      en: "The product aims to organize valuable information for professionals, founders, and readers interested in energy.",
+      es: "Herramienta que recopila información de valor para lectores interesados en energía",
+      en: "A tool that gathers valuable information for readers interested in energy.",
     },
     image: "/assets/energia-mexico-news.png",
     accent: "#27d7ff",

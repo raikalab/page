@@ -19,7 +19,6 @@ export function ProductCard({ app, language }: ProductCardProps) {
         <span className="product-card__meta">{app.category[language]}</span>
         <h3>{app.title}</h3>
         <p>{app.description[language]}</p>
-        <p className="product-card__detail">{app.detail[language]}</p>
         <PlatformButtons app={app} language={language} />
       </div>
     </article>

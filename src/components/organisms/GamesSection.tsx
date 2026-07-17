@@ -10,6 +10,16 @@ type GamesSectionProps = {
 
 export function GamesSection({ language }: GamesSectionProps) {
   const t = copy[language];
+  const displayOrder = [
+    "calcula-tu-liquidacion",
+    "verdad-o-reto-spicy",
+    "aprende-futbol",
+    "energia-mexico-news",
+    "juego-para-fiestas",
+  ];
+  const orderedApps = displayOrder
+    .map((id) => apps.find((app) => app.id === id))
+    .filter((app): app is (typeof apps)[number] => Boolean(app));
 
   return (
     <section className="section games" id="apps">
@@ -19,7 +29,7 @@ export function GamesSection({ language }: GamesSectionProps) {
         description={t.appsIntro}
       />
       <div className="games__grid">
-        {apps.map((app) => (
+        {orderedApps.map((app) => (
           <ProductCard
             key={app.id}
             app={app}
