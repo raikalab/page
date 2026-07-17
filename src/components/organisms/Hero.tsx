@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import type { Language } from "../../data/apps";
 import { copy } from "../../data/apps";
+import { assetPath } from "../../utils/assetPath";
 
 type HeroProps = {
   language: Language;
@@ -40,8 +41,16 @@ export function Hero({ language }: HeroProps) {
         </p>
       </div>
       <div className="hero__showcase hero__motion reveal" aria-hidden="true">
-        <video ref={videoRef} autoPlay muted loop playsInline preload="auto" poster="/assets/raika-lab-hero.png">
-          <source src="/assets/raika-lab-hero.mp4" type="video/mp4" />
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={assetPath("/assets/raika-lab-hero.png")}
+        >
+          <source src={assetPath("/assets/raika-lab-hero.mp4")} type="video/mp4" />
         </video>
         <span className="hero__scan" />
         <span className="hero__pulse hero__pulse--one" />

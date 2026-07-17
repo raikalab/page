@@ -1,4 +1,5 @@
 import type { Language, ProductApp } from "../../data/apps";
+import { assetPath } from "../../utils/assetPath";
 import { PlatformButtons } from "./PlatformButtons";
 
 type ProductCardProps = {
@@ -13,7 +14,7 @@ export function ProductCard({ app, language }: ProductCardProps) {
       style={{ "--accent": app.accent } as React.CSSProperties}
     >
       <div className="product-card__visual">
-        <img src={app.image} alt="" loading="lazy" />
+        <img src={assetPath(app.image)} alt="" loading="lazy" />
       </div>
       <div className="product-card__content">
         <span className="product-card__meta">{app.category[language]}</span>

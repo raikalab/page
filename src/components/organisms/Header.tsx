@@ -1,6 +1,7 @@
 import { Menu } from "lucide-react";
 import type { Language } from "../../data/apps";
 import { copy } from "../../data/apps";
+import { assetPath } from "../../utils/assetPath";
 import { Logo } from "../atoms/Logo";
 
 type HeaderProps = {
@@ -27,7 +28,7 @@ export function Header({ language, onLanguageChange, theme, onThemeChange }: Hea
           <a href="#laboratorio">{t.navTeam}</a>
           <a href="#contacto">{t.navContact}</a>
           <button className="icon-button" type="button" onClick={onLanguageChange} aria-label={t.language} title={t.language}>
-            <img src="/assets/language.png" alt="" aria-hidden="true" />
+            <img src={assetPath("/assets/language.png")} alt="" aria-hidden="true" />
           </button>
           <button
             className="icon-button"
@@ -36,7 +37,7 @@ export function Header({ language, onLanguageChange, theme, onThemeChange }: Hea
             aria-label={theme === "dark" ? t.themeLight : t.themeDark}
             title={theme === "dark" ? t.themeLight : t.themeDark}
           >
-            <img src="/assets/dark-mode.png" alt="" aria-hidden="true" />
+            <img src={assetPath("/assets/dark-mode.png")} alt="" aria-hidden="true" />
           </button>
         </div>
       </nav>
